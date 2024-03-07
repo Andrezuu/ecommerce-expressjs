@@ -1,0 +1,31 @@
+# Node.js
+node_modules/
+
+# Logs
+logs/
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+
+# Production build
+/build/
+
+# Dependency directories
+/bin/
+/lib/
+/libexec/
+/npm/
+/tmp/
+/.npm/
+
+# Optional: Uncomment the following if using Yarn package manager
+# yarn-error.log
+# .pnp/
+
+# Optional: Uncomment the following if using VS Code
+.vscode/
