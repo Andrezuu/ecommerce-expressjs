@@ -3,17 +3,20 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="..\user.js"></script>
         <title>Express Ecommerce</title>
     </head>
     <body>
         <header>
             <h1>Bienvenido!</h1>
         </header>
-
+        <div><%= locals.failMessage || '' %></div>
         <form id="loginForm" action="/login" method="POST">
             <input type="text" id="username" name="username" placeholder="Ingresa tu usuario">
             <input type="password" id="password" name="password" placeholder="Ingresa tu contraseña">
             <button type="submit">Login</button>
         </form>
+
+        <button id="crearUsuario" onclick="crearUsuarioClick()">Crear usuario</button>
     </body>
 </html>

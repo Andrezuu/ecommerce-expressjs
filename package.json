@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "type": "module",
-  "main": "database.js",
+  "main": "server.js",
   "scripts": {
-    "devStart": "nodemon app.js"
+    "devStart": "nodemon server.js"
   },
   "keywords": [],
   "author": "",
