@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1ra Pagina</title>
+</head>
+
+<style>
+    /* Estilos para la barra de navegación */
+    nav {
+        background-color: #333;
+        padding: 10px 0;
+    }
+    nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+    nav ul li {
+        display: inline-block;
+        margin-right: 100px;
+    }
+    nav ul li:last-child {
+        margin-right: 0;
+    }
+    nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: bold;
+    }
+    nav .search-box {
+        border: 2px solid #fff;
+        padding: 5px 10px;
+        border-radius: 20px;
+        margin-right: 20px;
+        background-color: transparent;
+        color: #fff;
+        font-size: 16px;
+    }
+    nav .search-box::placeholder {
+        color: #ccc;
+    }
+
+    /* Estilos para el contenido */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        justify-content: center;
+        max-width: 800px;
+    }
+</style>
+
+<body>
+    <div class="BarraNavegacion">
+        <nav>
+            <ul>
+                <li><a href="PaginaPrincipal.html">TecnologiA</a></li>
+                <li>
+                    <input type="text" class="search-box" placeholder="Buscar">
+                </li>
+                <li><a href="Perfil.html">Perfil</a></li>
+                <li><a href="Carrito.html">Carrito</a></li>
+            </ul>
+        </nav>
+    </div>
+    <!-- El resto -->
+    <br>
+    <br>
+    <img src="fotoPrueba.png" alt=""> 
+    <br>
+    <br>
+
+    <h2>
+        Recomendado
+    </h2>
+    <article>
+        <div class="container">
+            <div class="product">
+                <img src="fotoPrueba.png" alt="Producto 1">
+                <h4>Nombre del Producto 1</h4>
+                <a href="detalle_producto1.html">Ver detalles</a>
+            </div>
+            <br><br>
+            <div class="product">
+                <img src="fotoPrueba.png" alt="Producto 2">
+                <h4>Nombre del Producto 2</h4>
+                <a href="detalle_producto2.html">Ver detalles</a>
+            </div>
+        </div>
+        <!-- El resto del contenido de tu eCommerce iría aquí -->
+    </article>
+</body>
+</html>
+
+

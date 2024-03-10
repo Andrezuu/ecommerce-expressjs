@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del Producto</title>
+</head>
+
+<style>
+    /* Estilos para la barra de navegación */
+    nav {
+        background-color: #333;
+        padding: 10px 0;
+    }
+    nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+    nav ul li {
+        display: inline-block;
+        margin-right: 100px;
+    }
+    nav ul li:last-child {
+        margin-right: 0;
+    }
+    nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: bold;
+    }
+    nav .search-box {
+        border: 2px solid #fff;
+        padding: 5px 10px;
+        border-radius: 20px;
+        margin-right: 20px;
+        background-color: transparent;
+        color: #fff;
+        font-size: 16px;
+    }
+    nav .search-box::placeholder {
+        color: #ccc;
+    }
+
+    /* Estilos para el contenido */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        justify-content: center;
+        max-width: 800px;
+    }
+</style>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="PaginaPrincipal.html">TecnologiA</a></li>
+            <li>
+                <input type="text" class="search-box" placeholder="Buscar">
+            </li>
+            <li><a href="Perfil.html">Perfil</a></li>
+            <li><a href="Carrito.html">Carrito</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Laptop Asus</h1>
+        <div class="product-details">
+            <img src="fotoPrueba.png" alt="Producto Seleccionado">
+            <h2>ROG Strix Sacar 2022</h2>
+            <p>ASUS ROG Strix Scar 15 (2022) Gaming Laptop, 15.6” 240Hz IPS QHD Display, 
+                NVIDIA GeForce RTX 3080 Ti, Intel Core i9 12900H, 32GB DDR5, 1TB SSD, 
+                Per-Key RGB Keyboard, Windows 11 Pro, G533ZX-XS96,Off</p>
+            <p>Precio: $1900.00</p>
+            <!-- Agrega más detalles del producto aquí si es necesario -->
+            <form action="Carrito.html" method="POST">
+                <input type="hidden" name="producto" value="Asus ROG Strix Scar 2022">
+                <input type="hidden" name="precio" value="$1900.00">
+                <button type="submit">Agregar al Carrito</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+
