@@ -4,80 +4,126 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>1ra Pagina</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7; 
+            color: #333;
+        }
+
+        /* Estilos barra de navegación */
+        header nav {
+            background-color: #232f3e; 
+            padding: 10px 0;
+            border-bottom: 1px solid #c7c7c7; 
+        }
+        header nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        header nav ul li {
+            display: inline-block;
+            margin-right: 100px;
+        }
+        header nav ul li:last-child {
+            margin-right: 0;
+        }
+        header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            transition: color 0.3s; 
+        }
+        header nav ul li a:hover {
+            color: #ffd700; 
+        }
+        header nav .search-box {
+            border: 1px solid #c7c7c7; 
+            padding: 5px 10px;
+            border-radius: 20px;
+            margin-right: 20px;
+            background-color: #fff; 
+            color: #333;
+            font-size: 14px;
+            width: 200px;
+        }
+        header nav .search-box::placeholder {
+            color: #999;
+        }
+
+        /* Estilos para el contenido */
+        .datosPerfil {
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+            margin-top: 40px;
+        }
+
+        article {
+            background-color: #fff; 
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+            padding: 20px;
+            margin-right: 20px; 
+            max-width: 400px;
+        }
+
+        h1 {
+            margin-top: 0; 
+            color: #333; 
+        }
+
+        aside {
+            background-color: #fff; 
+            border-radius: 5px; 
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+            padding: 20px;
+            max-width: 400px; 
+        }
+
+        aside b {
+            display: block;
+            margin-bottom: 7px; 
+            margin-top: 7px;
+        }
+
+        aside p {
+            margin: 0; 
+        }
+    </style>
 </head>
 
-<style>
-    /* Estilos para la barra de navegación */
-    nav {
-        background-color: #333;
-        padding: 10px 0;
-    }
-    nav ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        text-align: center;
-    }
-    nav ul li {
-        display: inline-block;
-        margin-right: 100px;
-    }
-    nav ul li:last-child {
-        margin-right: 0;
-    }
-    nav ul li a {
-        color: #fff;
-        text-decoration: none;
-        font-size: 18px;
-        font-weight: bold;
-    }
-    nav .search-box {
-        border: 2px solid #fff;
-        padding: 5px 10px;
-        border-radius: 20px;
-        margin-right: 20px;
-        background-color: transparent;
-        color: #fff;
-        font-size: 16px;
-    }
-    nav .search-box::placeholder {
-        color: #ccc;
-    }
-
-    /* Estilos para el contenido */
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        justify-content: center;
-        max-width: 800px;
-    }
-</style>
-
-
 <body>
-    <nav>
-        <ul>
-            <li><a href="PaginaPrincipal.html">TecnologiA</a></li>
-            <li>
-                <input type="text" class="search-box" placeholder="Buscar">
-            </li>
-            <li><a href="Perfil.html">Perfil</a></li>
-            <li><a href="Carrito.html">Carrito</a></li>
-        </ul>
-    </nav>
+    <header>
+        <nav class="BarraNavegacion">
+            <ul>
+                <li><a href="PaginaPrincipal.html" id="inicio">Inicio</a></li>
+                <li>
+                    <input type="text" class="search-box" placeholder="Buscar">
+                </li>
+                <li><a href="Perfil.html" id="perfil">Perfil</a></li>
+                <li><a href="Carrito.html" id="carrito">Carrito</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <div class="datosPerfil">
         <article>
             <h1>Bienvenido</h1>
-            <h3><img src="imagenes/fotoPrueba.png" alt=""></h3>
+            <img src="imagenes/fotoPrueba.png" alt="">
         </article>
         <aside>
             <b>Nombres:</b><p>Nombre del Usuario</p>
             <b>Apellidos:</b><p>Apellido del Usuario</p>
             <b>Email:</b><p>email del Usuario</p>
             <b>País:</b><p>Pais del Usuario</p>
-            <b>Metodo de pago:</b><p>Metodo de Pago del Usuario</p>
+            <b>Método de pago:</b><p>Método de Pago del Usuario</p>
             <b>Compras realizadas:</b><p>Comparas del Usuario</p>
         </aside>
     </div>

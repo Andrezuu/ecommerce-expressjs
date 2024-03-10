@@ -4,85 +4,155 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalles del Producto</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7; /* Color de fondo */
+            color: #333;
+        }
+
+        /* Estilos barra de navegación */
+        header nav {
+            background-color: #232f3e; /* Color de fondo */
+            padding: 10px 0;
+            border-bottom: 1px solid #c7c7c7; /* Línea de separación */
+        }
+        header nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        header nav ul li {
+            display: inline-block;
+            margin-right: 100px;
+        }
+        header nav ul li:last-child {
+            margin-right: 0;
+        }
+        header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            transition: color 0.3s; /* Transición suave de color */
+        }
+        header nav ul li a:hover {
+            color: #ffd700; /* Cambia el color al pasar el ratón por encima */
+        }
+        header nav .search-box {
+            border: 1px solid #c7c7c7; /* Borde búsqueda */
+            padding: 5px 10px;
+            border-radius: 20px;
+            margin-right: 20px;
+            background-color: #fff; /* fondo de búsqueda */
+            color: #333;
+            font-size: 14px;
+            width: 200px;
+        }
+        header nav .search-box::placeholder {
+            color: #999;
+        }
+
+        /* Estilos para el contenido */
+        article {
+            font-family: Arial, sans-serif;
+            margin: 20px auto;
+            padding: 0;
+            background-color: #f7f7f7; /* Color de fondo */
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+
+        .container {
+            background-color: #fff; /* Color de fondo del contenedor */
+            border-radius: 5px; /* Bordes redondeados */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+            padding: 20px;
+            max-width: 600px; /* Ancho máximo del contenedor */
+        }
+
+        h1 {
+            margin-top: 0; /* Elimina el margen superior del encabezado */
+            color: #333; /* Color del texto del encabezado */
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .product-details img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .product-details h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .product-details p {
+            margin-bottom: 10px;
+        }
+
+        .product-details form {
+            margin-top: 20px;
+        }
+
+        .product-details button {
+            background-color: #f0c14b; /* Color de fondo del botón */
+            border: none;
+            color: #111; 
+            padding: 10px 20px;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s; /* Transición suave del color de fondo */
+        }
+
+        .product-details button:hover {
+            background-color: #ddb347; /* Cambia el color de fondo al pasar el ratón por encima */
+        }
+    </style>
 </head>
 
-<style>
-    /* Estilos para la barra de navegación */
-    nav {
-        background-color: #333;
-        padding: 10px 0;
-    }
-    nav ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        text-align: center;
-    }
-    nav ul li {
-        display: inline-block;
-        margin-right: 100px;
-    }
-    nav ul li:last-child {
-        margin-right: 0;
-    }
-    nav ul li a {
-        color: #fff;
-        text-decoration: none;
-        font-size: 18px;
-        font-weight: bold;
-    }
-    nav .search-box {
-        border: 2px solid #fff;
-        padding: 5px 10px;
-        border-radius: 20px;
-        margin-right: 20px;
-        background-color: transparent;
-        color: #fff;
-        font-size: 16px;
-    }
-    nav .search-box::placeholder {
-        color: #ccc;
-    }
-
-    /* Estilos para el contenido */
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        justify-content: center;
-        max-width: 800px;
-    }
-</style>
-
 <body>
-    <nav>
-        <ul>
-            <li><a href="PaginaPrincipal.html">TecnologiA</a></li>
-            <li>
-                <input type="text" class="search-box" placeholder="Buscar">
-            </li>
-            <li><a href="Perfil.html">Perfil</a></li>
-            <li><a href="Carrito.html">Carrito</a></li>
-        </ul>
-    </nav>
+    <header>
+        <nav class="BarraNavegacion">
+            <ul>
+                <li><a href="PaginaPrincipal.html" id="inicio">Inicio</a></li>
+                <li>
+                    <input type="text" class="search-box" placeholder="Buscar">
+                </li>
+                <li><a href="Perfil.html" id="perfil">Perfil</a></li>
+                <li><a href="Carrito.html" id="carrito">Carrito</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <div class="container">
-        <h1>Laptop Asus</h1>
-        <div class="product-details">
-            <img src="fotoPrueba.png" alt="Producto Seleccionado">
-            <h2>ROG Strix Sacar 2022</h2>
-            <p>ASUS ROG Strix Scar 15 (2022) Gaming Laptop, 15.6” 240Hz IPS QHD Display, 
-                NVIDIA GeForce RTX 3080 Ti, Intel Core i9 12900H, 32GB DDR5, 1TB SSD, 
-                Per-Key RGB Keyboard, Windows 11 Pro, G533ZX-XS96,Off</p>
-            <p>Precio: $1900.00</p>
-            <!-- Agrega más detalles del producto aquí si es necesario -->
-            <form action="Carrito.html" method="POST">
-                <input type="hidden" name="producto" value="Asus ROG Strix Scar 2022">
-                <input type="hidden" name="precio" value="$1900.00">
-                <button type="submit">Agregar al Carrito</button>
-            </form>
+    <article>
+        <div class="container">
+            <h1>Laptop Asus</h1>
+            <div class="product-details">
+                <img src="imagenes/fotoPrueba.png" alt="Producto Seleccionado">
+                <h2>ROG Strix Scar 2022</h2>
+                <p>ASUS ROG Strix Scar 15 (2022) Gaming Laptop, 15.6” 240Hz IPS QHD Display, 
+                    NVIDIA GeForce RTX 3080 Ti, Intel Core i9 12900H, 32GB DDR5, 1TB SSD, 
+                    Per-Key RGB Keyboard, Windows 11 Pro, G533ZX-XS96,Off</p>
+                <p>Precio: $1900.00</p>
+                <!-- Agrega más detalles del producto aquí si es necesario -->
+                <form action="Carrito.html" method="POST">
+                    <input type="hidden" name="producto" value="Asus ROG Strix Scar 2022">
+                    <input type="hidden" name="precio" value="$1900.00">
+                    <button type="submit">Agregar al Carrito</button>
+                </form>
+            </div>
         </div>
-    </div>
+    </article>  
 </body>
 </html>
 
