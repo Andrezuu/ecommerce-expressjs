@@ -17,5 +17,5 @@ MYSQL_DATABASE='prueba'
 
 Run from terminal
 ```
-node app.js
+npm start
 ```
