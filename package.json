@@ -2,7 +2,7 @@
   "name": "nodesql",
   "version": "1.0.0",
   "description": "",
-  "type": "module",
+  "type": "commonjs",
   "main": "server.js",
   "scripts": {
     "devStart": "nodemon server.js"

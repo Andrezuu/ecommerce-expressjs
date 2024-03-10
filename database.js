@@ -1,5 +1,5 @@
-import mysql from 'mysql2'
-import dotenv from 'dotenv'
+mysql = require('mysql2')
+dotenv = require('dotenv')
 dotenv.config()
 
 // pool en vez de conexion para poder reusarla
@@ -12,7 +12,7 @@ const pool = mysql.createPool({
     database: process.env.MYSQL_DATABASE
 }).promise()
 
-export default pool
+module.exports = pool
 
 // const result = await checkUser('patito', '12345')
 //  console.log(result) 
