@@ -1,7 +1,7 @@
-import express from 'express'
-import { getUsers, getUser, createUser, checkUser } from './usersData.js'
-import bodyParser from 'body-parser'
-import e from 'express'
+const express = require('express');
+const { getUsers, getUser, createUser, checkUser } = require('./usersData.js');
+const homeRouter = require('./routes/home.js');
+const bodyParser = require('body-parser');
 
 const app = express()
 const port = 3000
@@ -54,10 +54,8 @@ app.post("/crearUsuario", async (req, res) => {
 
 })
 
-app.get("/home", (req, res) => {
-    res.render('home', { title: 'Pagina de inicio' })
-})
 
+app.use('/home', homeRouter)//
 
 
 app.use(async (err, req, res, next) => {
@@ -67,3 +65,5 @@ app.use(async (err, req, res, next) => {
 })
 
 app.listen(port, () => { console.log('Running on 3000') })
+
+module.exports = app

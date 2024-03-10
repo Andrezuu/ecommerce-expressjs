@@ -1,3 +1,15 @@
+function goPerfil() {
+    window.location.href = '/home/perfil'
+}
+
+function goCarrito() {
+    window.location.href = '/home/carrito'
+}
+
+function goHome() {
+    window.location.href = '/home'
+}
+
 function crearUsuarioClick() {
     window.location.href = '/crearUsuario'
 }

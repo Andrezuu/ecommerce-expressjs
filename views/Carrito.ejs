@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>1ra Pagina</title>
+    <script src="..\user.js"></script>
+    <title>Carrito de Compras</title>
 </head>
 
 <style>
@@ -55,45 +56,42 @@
 </style>
 
 <body>
-    <div class="BarraNavegacion">
+    <div class="barraNavegacion">
         <nav>
             <ul>
-                <li><a href="PaginaPrincipal.html">TecnologiA</a></li>
+                <li><a href="#" onclick="goHome()">TecnologiA</a></li>
                 <li>
                     <input type="text" class="search-box" placeholder="Buscar">
                 </li>
-                <li><a href="Perfil.html">Perfil</a></li>
-                <li><a href="Carrito.html">Carrito</a></li>
+                <li><a href="#" onclick="goPerfil()">Perfil</a></li>
+                <li><a href="#" onclick="goCarrito()">Carrito</a></li>
             </ul>
         </nav>
     </div>
-    <!-- El resto -->
-    <br>
-    <br>
-    <img src="fotoPrueba.png" alt=""> 
-    <br>
-    <br>
 
-    <h2>
-        Recomendado
-    </h2>
-    <article>
-        <div class="container">
-            <div class="product">
-                <img src="fotoPrueba.png" alt="Producto 1">
-                <h4>Nombre del Producto 1</h4>
-                <a href="detalle_producto1.html">Ver detalles</a>
-            </div>
-            <br><br>
-            <div class="product">
-                <img src="fotoPrueba.png" alt="Producto 2">
-                <h4>Nombre del Producto 2</h4>
-                <a href="detalle_producto2.html">Ver detalles</a>
-            </div>
+    <div class="container">
+        <h1>Tu Carrito </h1>
+        <!-- Productos en el carrito -->
+        <div class="cart-item">
+            <img src="imagenes/fotoPrueba.png" alt="Producto 1">
+            <h3>Nombre del Producto </h3>
+            <p>Descripcion del Producto</p>
+            <p>Precio: $XX.XX</p>
+            <!-- Agrega más detalles del producto aquí si es necesario -->
         </div>
-        <!-- El resto del contenido de tu eCommerce iría aquí -->
-    </article>
+        <!-- Agrega más productos según sea necesario -->
+        <div class="cart-item">
+            <img src="imagenes/fotoPrueba.png" alt="Producto 1">
+            <h3>Nombre del Producto </h3>
+            <p>Descripcion del Producto</p>
+            <p>Precio: $XX.XX</p>
+            <!-- Agrega más detalles del producto aquí si es necesario -->
+        </div>
+        <!-- Total del carrito -->
+        <h2>Total: $XX.XX</h2>
+        <!-- Botón para proceder al pago -->
+        <button>Proceder al Pago</button>
+    </div>
 </body>
 </html>
-
 
