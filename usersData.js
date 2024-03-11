@@ -1,4 +1,4 @@
-pool = require('./database')
+dpool = require('./database')
 
 async function getUsers() {
     const [rows] = await pool.query("select * from users")

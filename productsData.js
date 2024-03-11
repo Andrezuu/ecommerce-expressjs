@@ -1,14 +1,14 @@
-import pool from './database.js'
+pool = require('./database.js')
 
-export async function getProducts() {
+async function getProducts() {
     const [rows] = await pool.query(`
-        select id_producto, producto_nombre, precio, precio_cuotas, descripcion
+        select id_producto, producto_nombre, precio, precio_cuotas, descripcion, imagen_ruta, precio_envio
         from productos
     `)
     return rows
 }
 
-export async function getProduct(id_producto) {
+async function getProduct(id_producto) {
     const [result] = await pool.query(`
         select * 
         from productos
@@ -17,7 +17,7 @@ export async function getProduct(id_producto) {
     return result
 }
 
-export async function createProduct(producto_nombre, modelo, caracteristicas, precio, precio_cuotas, descripcion) {
+async function createProduct(producto_nombre, modelo, caracteristicas, precio, precio_cuotas, descripcion) {
 
     const info = [producto_nombre, modelo, caracteristicas, precio, precio_cuotas, descripcion]
 
@@ -29,3 +29,6 @@ export async function createProduct(producto_nombre, modelo, caracteristicas, pr
     return getProduct(id)
 }
 
+module.exports = {
+    getProduct, getProducts, createProduct
+}

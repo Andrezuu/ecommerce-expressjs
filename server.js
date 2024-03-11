@@ -1,7 +1,9 @@
-const express = require('express');
-const { getUsers, getUser, createUser, checkUser } = require('./usersData.js');
-const homeRouter = require('./routes/home.js');
-const bodyParser = require('body-parser');
+const express = require('express')
+const { getUsers, getUser, createUser, checkUser } = require('./usersData.js')
+const homeRouter = require('./routes/home.js')
+const productosRouter = require('./routes/productos.js')
+const bodyParser = require('body-parser')
+const { route } = require('./routes/productos.js')
 
 const app = express()
 const port = 3000
@@ -54,8 +56,8 @@ app.post("/crearUsuario", async (req, res) => {
 
 })
 
-
-app.use('/home', homeRouter)//
+app.use('/home', homeRouter)
+app.use('/productos', productosRouter)
 
 
 app.use(async (err, req, res, next) => {
