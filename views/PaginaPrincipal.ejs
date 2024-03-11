@@ -135,36 +135,17 @@
     <article>
         <h1>Nuestros Productos</h1>
         <div class="container">
-            <div class="product">
-                <img src="imagenes/fotoPrueba.png" alt="Producto 1">
-                <h4>Nombre del Producto 1</h4>
-                <a href="detalle_producto1.html">Ver detalles</a>
-            </div>
-            <div class="product">
-                <img src="imagenes/fotoPrueba.png" alt="Producto 2">
-                <h4>Nombre del Producto 2</h4>
-                <a href="detalle_producto2.html">Ver detalles</a>
-            </div>
-            <div class="product">
-                <img src="imagenes/fotoPrueba.png" alt="Producto 3">
-                <h4>Nombre del Producto 3</h4>
-                <a href="detalle_producto1.html">Ver detalles</a>
-            </div>
-            <div class="product">
-                <img src="imagenes/fotoPrueba.png" alt="Producto 4">
-                <h4>Nombre del Producto 4</h4>
-                <a href="detalle_producto2.html">Ver detalles</a>
-            </div>
-            <div class="product">
-                <img src="imagenes/fotoPrueba.png" alt="Producto 5">
-                <h4>Nombre del Producto 5</h4>
-                <a href="detalle_producto1.html">Ver detalles</a>
-            </div>
-            <div class="product">
-                <img src="imagenes/fotoPrueba.png" alt="Producto 6">
-                <h4>Nombre del Producto 6</h4>
-                <a href="detalle_producto2.html">Ver detalles</a>
-            </div>
+            <% for (let i = 0; i < productos.length; i++) { %>
+                <div class="product">
+                    <h1>"<%=productos_nombres[i]%>"</h1>
+                    <img src="<%= productos_imagenes[i] %>">
+                    <% const producto = productos[i] %>
+                    <% for (const key in producto) { %>
+                        <li><strong><%= key %>:</strong> <%= producto[key] %></li>
+                    <% } %>
+                    <a href="/productos/<%= productos_id[i] %>">Ver detalles</a>
+                </div>
+            <% } %>            
         </div>
     </article>
 </body>
