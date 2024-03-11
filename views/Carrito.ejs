@@ -4,93 +4,167 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrito de Compras</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+
+        /* Estilos barra de navegación */
+        header nav {
+            background-color: #232f3e; 
+            padding: 10px 0;
+            border-bottom: 1px solid #c7c7c7; 
+        }
+        header nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        header nav ul li {
+            display: inline-block;
+            margin-right: 100px;
+        }
+        header nav ul li:last-child {
+            margin-right: 0;
+        }
+        header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            transition: color 0.3s; /* Transición suave de color */
+        }
+        header nav ul li a:hover {
+            color: #ffd700; /* Cambia el color al pasar el ratón por encima */
+        }
+        header nav .search-box {
+            border: 1px solid #c7c7c7;
+            padding: 5px 10px;
+            border-radius: 20px;
+            margin-right: 20px;
+            background-color: #fff; 
+            font-size: 14px;
+            width: 200px;
+        }
+        header nav .search-box::placeholder {
+            color: #999;
+        }
+
+        /* Estilos para el contenido */
+        article {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7; 
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+            padding: 20px;
+            max-width: 600px; 
+        }
+
+        h1 {
+            margin-top: 0; 
+            color: #333; 
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .cart-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ddd; /* Línea divisoria entre elementos */
+            padding-bottom: 20px;
+        }
+
+        .cart-item img {
+            max-width: 400px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .cart-item h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .cart-item p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+
+        .cart-item button {
+            background-color: #f0c14b; /* Color de fondo del botón */
+            border: none;
+            color: #111; 
+            padding: 10px 20px;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s; /
+        }
+
+        .cart-item button:hover {
+            background-color: #ddb347; /* Cambia el color de fondo al pasar el ratón por encima */
+        }
+
+        .total {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 
-<style>
-    /* Estilos para la barra de navegación */
-    nav {
-        background-color: #333;
-        padding: 10px 0;
-    }
-    nav ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        text-align: center;
-    }
-    nav ul li {
-        display: inline-block;
-        margin-right: 100px;
-    }
-    nav ul li:last-child {
-        margin-right: 0;
-    }
-    nav ul li a {
-        color: #fff;
-        text-decoration: none;
-        font-size: 18px;
-        font-weight: bold;
-    }
-    nav .search-box {
-        border: 2px solid #fff;
-        padding: 5px 10px;
-        border-radius: 20px;
-        margin-right: 20px;
-        background-color: transparent;
-        color: #fff;
-        font-size: 16px;
-    }
-    nav .search-box::placeholder {
-        color: #ccc;
-    }
-
-    /* Estilos para el contenido */
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        justify-content: center;
-        max-width: 800px;
-    }
-</style>
-
 <body>
-    <div class="barraNavegacion">
+    <header>
         <nav>
             <ul>
-                <li><a href="PaginaPrincipal.html">TecnologiA</a></li>
+                <li><a href="PaginaPrincipal.html" id="inicio">Inicio</a></li>
                 <li>
                     <input type="text" class="search-box" placeholder="Buscar">
                 </li>
-                <li><a href="Perfil.html">Perfil</a></li>
-                <li><a href="Carrito.html">Carrito</a></li>
+                <li><a href="Perfil.html" id="perfil">Perfil</a></li>
+                <li><a href="Carrito.html" id="carrito">Carrito</a></li>
             </ul>
         </nav>
-    </div>
-
+    </header>
+<article>
     <div class="container">
         <h1>Tu Carrito </h1>
-        <!-- Productos en el carrito -->
+        
         <div class="cart-item">
             <img src="imagenes/fotoPrueba.png" alt="Producto 1">
             <h3>Nombre del Producto </h3>
             <p>Descripcion del Producto</p>
             <p>Precio: $XX.XX</p>
-            <!-- Agrega más detalles del producto aquí si es necesario -->
+            
         </div>
-        <!-- Agrega más productos según sea necesario -->
+      
         <div class="cart-item">
             <img src="imagenes/fotoPrueba.png" alt="Producto 1">
             <h3>Nombre del Producto </h3>
             <p>Descripcion del Producto</p>
             <p>Precio: $XX.XX</p>
-            <!-- Agrega más detalles del producto aquí si es necesario -->
+            
         </div>
-        <!-- Total del carrito -->
-        <h2>Total: $XX.XX</h2>
-        <!-- Botón para proceder al pago -->
+        
+        <div class="total">Total: $XX.XX</div>
+        
         <button>Proceder al Pago</button>
     </div>
+</article>
 </body>
 </html>
 
