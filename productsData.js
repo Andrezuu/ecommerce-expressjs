@@ -27,7 +27,8 @@ async function getSelectProducts(id_productos) {
     });
     // Esperar a todas las promises con Promise.all
     await Promise.all(promises);
-    // console.log(promises, 'lo prometi', result)
+    // Reverse para mostrar el ultimo producto añadido
+    result = result.reverse()
     return result;
 }
 

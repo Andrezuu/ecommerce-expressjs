@@ -29,7 +29,6 @@ async function checkUser(username, password) {
         from users
         where username = ? and password = ?
     `, [username, password])
-    console.log(result)
     // devuelve true si existe la row
     return result.length > 0
 }
@@ -37,16 +36,25 @@ async function checkUser(username, password) {
 async function getUserProducts(id_user) {
     const result = await pool.query(`
         select productos_carrito
-        from users
+        from users 
         where id_user = ?
     `, id_user)
     return result
 }
 
-async function addProduct(id_producto) {
+async function addProductoCarrito(id_producto, id_user) {
+    const [oldProducts] = await getUserProducts(id_user)
+    // oldProductos[0] saca los datos en un json
+    // .productos_carrito devuelve el array
+    const productArray = await oldProducts[0].productos_carrito
+    productArray.push(id_producto)
+    const productJSON = JSON.stringify(productArray)
     const [result] = await pool.query(`
-
-    `)
+        update users
+        set productos_carrito = ?
+        where id_user = ?
+    `, [productJSON, id_user])
+    return result
 }
 
 module.exports = {
@@ -54,5 +62,6 @@ module.exports = {
     getUser,
     createUser,
     checkUser,
-    getUserProducts
+    getUserProducts,
+    addProductoCarrito
 }

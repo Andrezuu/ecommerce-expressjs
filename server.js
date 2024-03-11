@@ -21,13 +21,10 @@ app.get("/login", (req, res) => {
 app.post("/login", async (req, res) => {
     const { username, password } = req.body
     const existsUser = await checkUser(username, password)
-    console.log(existsUser, username, password)
     if (existsUser) {
         res.redirect('/home')
-        console.log("Loggeo success!")
     } else {
         res.render('login', { failMessage: "Datos incorrectos" })
-        console.log('when fallas')
     }
 })
 
