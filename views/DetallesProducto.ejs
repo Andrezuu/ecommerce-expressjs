@@ -163,8 +163,7 @@
                 <p> <strong>Precio del envío:</strong> <%= producto.precio_envio === 0 ? 'Gratis' : producto.precio_envio%> Bs.</p>
                 <!-- Agrega más detalles del producto aquí si es necesario -->
                 <form action="/home/carrito" method="POST">
-                    <input type="hidden" name="producto" value="Asus ROG Strix Scar 2022">
-                    <input type="hidden" name="precio" value="$1900.00">
+                    <input type="hidden" name="id_producto" value=<%= producto.id_producto %>>
                     <button type="submit">Agregar al Carrito</button>
                 </form>
             </div>
