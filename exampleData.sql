@@ -1,4 +1,5 @@
--- MySQL dump 10.13  Distrib 8.0.36, for Win64 (x86_64)
+
+-- MySQL dump 10.13  Distrib 8.0.19, for Win64 (x86_64)
 --
 -- Host: localhost    Database: prueba
 -- ------------------------------------------------------
@@ -32,8 +33,10 @@ CREATE TABLE `productos` (
   `descripcion` text,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `precio_envio` int DEFAULT '0',
+  `imagen_ruta` varchar(255) DEFAULT 'imagenes/fotoPrueba.png',
   PRIMARY KEY (`id_producto`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,7 +45,7 @@ CREATE TABLE `productos` (
 
 LOCK TABLES `productos` WRITE;
 /*!40000 ALTER TABLE `productos` DISABLE KEYS */;
-INSERT INTO `productos` VALUES (1,'Laptop HP Gaming','Victus',NULL,213.00,12345.00,'lo describe','2024-03-10 02:51:24','2024-03-10 02:51:24'),(3,'Auto','Modelo 1','FOo',23.00,234.00,'bar','2024-03-10 03:08:49','2024-03-10 03:08:49');
+INSERT INTO `productos` VALUES (1,'Laptop HP Gaming','Victus','Disco solido',213.00,12345.00,'lo describe','2024-03-10 02:51:24','2024-03-10 02:51:24',30,'imagenes/laptop.jpg'),(3,'Auto','Modelo 1','FOo',23.00,234.00,'bar','2024-03-10 03:08:49','2024-03-10 03:08:49',30,'imagenes/auto.jpg'),(4,'Tablet Apple','iPad Pro','256 GB',999.00,200.00,'Color rosa','2024-03-11 05:48:24','2024-03-11 05:48:24',30,'imagenes/tablet.jpg'),(5,'Camara Canon','EOS R5','Sensor de imagen de alta calida',3840.00,57.00,'tres lentillas ','2024-03-11 05:53:19','2024-03-11 05:53:19',30,'imagenes/camaraCanon.jpg'),(6,'Consola de videojuegos','X-BOX','Capacidad de almacenamiento',2500.00,75.00,'Viene con 3 juegos','2024-03-11 06:25:21','2024-03-11 06:25:21',30,'imagenes/xbox.jpg'),(7,'Ropa','Sudaderas','Algodon',125.00,25.00,'color: negro, rosa, plomo','2024-03-11 06:25:21','2024-03-11 06:25:21',20,'imagenes/ropa.jpg'),(8,'Funda laptop','The North Face','Material impermiable',70.00,10.00,'Varios compartimientos','2024-03-11 06:25:21','2024-03-11 06:25:21',15,'imagenes/Funda.jpg'),(9,'Cartera','The totebag ','Cuero',350.00,20.00,'Varios Compartimientos','2024-03-11 06:25:21','2024-03-11 06:25:21',20,'imagenes/cartera.jpg'),(10,'Cuadernos ','One','Hoja punteada ',27.00,27.00,'Tamaño carta u oficio','2024-03-11 06:25:21','2024-03-11 06:25:21',20,'imagenes/Cuaderno.jpg'),(11,'Toma todo','Stanley','Alta durabilidad',250.00,50.00,'Color blanco','2024-03-11 06:25:21','2024-03-11 06:25:21',15,'imagenes/Tomatodo.jpg');
 /*!40000 ALTER TABLE `productos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -54,13 +57,19 @@ DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `users` (
-  `id_user` bigint NOT NULL AUTO_INCREMENT,
-  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `username` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `password` varchar(100) NOT NULL,
-  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `id_user` int NOT NULL AUTO_INCREMENT,
+  `username` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `nombres` varchar(255) DEFAULT NULL,
+  `apellidos` varchar(255) DEFAULT NULL,
+  `email` varchar(150) DEFAULT NULL,
+  `pais` decimal(10,2) DEFAULT NULL,
+  `metodo_pago` decimal(10,2) DEFAULT NULL,
+  `nro_compras` text,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_user`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -69,7 +78,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (10,'prueba@gmail.com','patito','12345','2024-03-06 22:37:35'),(11,'prueba2@gmail.com','patito2','12345','2024-03-06 22:38:05'),(12,'a@gmail.com','lucio','123','2024-03-06 23:36:01'),(13,'a@a.com','aaa','aaa','2024-03-09 16:42:56'),(14,'a@a.com','das','dsadas','2024-03-09 20:48:51'),(15,'uwo@a.com','uwo','uwo','2024-03-09 22:23:11');
+INSERT INTO `users` VALUES (1,'patito','12345',NULL,NULL,'a@a.com',NULL,NULL,NULL,'2024-03-11 01:57:27','2024-03-11 01:57:27');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -86,4 +95,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-03-09 23:15:21
+-- Dump completed on 2024-03-11  9:27:31
