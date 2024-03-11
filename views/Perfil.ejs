@@ -10,15 +10,15 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f7f7f7; /* Color de fondo */
+            background-color: #f7f7f7;
             color: #333;
         }
 
         /* Estilos barra de navegación */
         header nav {
-            background-color: #232f3e; /* Color de fondo */
+            background-color: #232f3e; 
             padding: 10px 0;
-            border-bottom: 1px solid #c7c7c7; /* Línea de separación */
+            border-bottom: 1px solid #c7c7c7; 
         }
         header nav ul {
             list-style: none;
@@ -96,6 +96,21 @@
         aside p {
             margin: 0; 
         }
+
+        /* Responsive */
+        @media only screen and (max-width: 600px) {
+            header nav ul li {
+                margin-right: 10px;
+            }
+            header nav .search-box {
+                width: 150px;
+            }
+            .product {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+
     </style>
 </head>
 
