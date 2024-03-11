@@ -148,7 +148,7 @@
                     <input type="text" class="search-box" placeholder="Buscar">
                 </li>
                 <li><a href="/home/perfil" id="perfil">Perfil</a></li>
-                <li><a href="#" id="carrito">Carrito</a></li>
+                <li><a href="" id="carrito">Carrito</a></li>
             </ul>
         </nav>
     </header>
@@ -162,6 +162,9 @@
                 <img src=<%= productosSelected[i].imagen_ruta %> alt="Producto 1">
                 <p><%= productosSelected[i].descripcion %></p>
                 <p><%= productosSelected[i].precio %></p>
+                <form method="post">
+                    <input type="hidden">
+                </form>
             <% } %>
         </div>
 
