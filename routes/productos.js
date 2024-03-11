@@ -1,18 +1,16 @@
 const express = require('express')
-const { getProduct, getProducts } = require('../productsData.js')
+const { getProduct, getProducts, getSelectProducts } = require('../productsData.js')
 const router = express.Router()
 router.use(express.static('public'))
 
 router.get("/:id_producto", async (req, res) => {
     const id_producto = req.params.id_producto
-    const productoArray = await getProduct(id_producto)
-    const productoJSON = JSON.stringify(productoArray[0])
-    //const productoOBJ = JSON.parse(productoJSON)
-    //TODO: MUESTRA EL PRODUCTO CORRECTO 
-    res.render('DetallesProducto')
+    const [producto] = await getProduct(id_producto)
+    res.render('DetallesProducto', {producto} )
 })
-router.get("/", (req, res) => {
-    res.send('eyo tu eres el producto')
+router.get("/", async (req, res) => {
+    const result = await getSelectProducts([1,3,7])
+    res.send(result)
 })
 
 module.exports = router

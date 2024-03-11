@@ -17,6 +17,22 @@ async function getProduct(id_producto) {
     return result
 }
 
+async function getSelectProducts(id_productos) {
+    let result = [];
+
+    // Cada id se mapea con su promise  
+    const promises = id_productos.map(async id_producto => {
+        const [newItem] = await getProduct(id_producto); // entre [] para sacar el item 
+        result.push(newItem); 
+    });
+    // Esperar a todas las promises con Promise.all
+    await Promise.all(promises);
+    // console.log(promises, 'lo prometi', result)
+    return result;
+}
+
+
+
 async function createProduct(producto_nombre, modelo, caracteristicas, precio, precio_cuotas, descripcion) {
 
     const info = [producto_nombre, modelo, caracteristicas, precio, precio_cuotas, descripcion]
@@ -30,5 +46,5 @@ async function createProduct(producto_nombre, modelo, caracteristicas, precio, p
 }
 
 module.exports = {
-    getProduct, getProducts, createProduct
+    getProduct, getProducts, createProduct, getSelectProducts
 }

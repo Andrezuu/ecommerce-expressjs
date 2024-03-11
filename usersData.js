@@ -1,4 +1,4 @@
-dpool = require('./database')
+const pool = require('./database')
 
 async function getUsers() {
     const [rows] = await pool.query("select * from users")
@@ -34,9 +34,25 @@ async function checkUser(username, password) {
     return result.length > 0
 }
 
+async function getUserProducts(id_user) {
+    const result = await pool.query(`
+        select productos_carrito
+        from users
+        where id_user = ?
+    `, id_user)
+    return result
+}
+
+async function addProduct(id_producto) {
+    const [result] = await pool.query(`
+
+    `)
+}
+
 module.exports = {
     getUsers,
     getUser,
     createUser,
-    checkUser
+    checkUser,
+    getUserProducts
 }

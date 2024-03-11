@@ -149,16 +149,20 @@
 
     <article>
         <div class="container">
-            <h1>Laptop Asus</h1>
+            <h1><%= producto.producto_nombre || 'Nombre del producto' %></h1>
             <div class="product-details">
-                <img src="imagenes/fotoPrueba.png" alt="Producto Seleccionado">
-                <h2>ROG Strix Scar 2022</h2>
-                <p>ASUS ROG Strix Scar 15 (2022) Gaming Laptop, 15.6” 240Hz IPS QHD Display, 
-                    NVIDIA GeForce RTX 3080 Ti, Intel Core i9 12900H, 32GB DDR5, 1TB SSD, 
-                    Per-Key RGB Keyboard, Windows 11 Pro, G533ZX-XS96,Off</p>
-                <p>Precio: $1900.00</p>
+                <img src="<%= producto.imagen_ruta %>" alt="Producto Seleccionado">
+                <h2><%= producto.modelo || '' %></h2>
+                <p>
+                    <strong>Características:</strong>
+                    <br><%= producto.caracteristicas || '' %>
+                </p>
+                <p> <strong>Descripción:</strong> <%= producto.descripcion %></p>
+                <p> <strong>Precio:</strong> <%= producto.precio %> Bs. </p>
+                <p> <strong>Precio en cuotas:</strong> <%= producto.precio_cuotas %> Bs.</p>
+                <p> <strong>Precio del envío:</strong> <%= producto.precio_envio === 0 ? 'Gratis' : producto.precio_envio%> Bs.</p>
                 <!-- Agrega más detalles del producto aquí si es necesario -->
-                <form action="Carrito.html" method="POST">
+                <form action="/home/carrito" method="POST">
                     <input type="hidden" name="producto" value="Asus ROG Strix Scar 2022">
                     <input type="hidden" name="precio" value="$1900.00">
                     <button type="submit">Agregar al Carrito</button>

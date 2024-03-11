@@ -112,7 +112,7 @@
             padding: 10px 20px;
             border-radius: 3px;
             cursor: pointer;
-            transition: background-color 0.3s; /
+            transition: background-color 0.3s; 
         }
 
         .cart-item button:hover {
@@ -158,22 +158,16 @@
         <h1>Tu Carrito </h1>
         
         <div class="cart-item">
-            <img src="imagenes/fotoPrueba.png" alt="Producto 1">
-            <h3>Nombre del Producto </h3>
-            <p>Descripcion del Producto</p>
-            <p>Precio: $XX.XX</p>
-            
+            <% for (let i = 0; i < productosSelected.length; i++) {  %>
+                <img src=<%= productosSelected[i].imagen_ruta %> alt="Producto 1">
+                <h3><%= productosSelected[i].producto_nombre %></h3>
+                <p><%= productosSelected[i].descripcion %></p>
+                <p><%= productosSelected[i].precio %></p>
+            <% } %>
         </div>
-      
-        <div class="cart-item">
-            <img src="imagenes/fotoPrueba.png" alt="Producto 1">
-            <h3>Nombre del Producto </h3>
-            <p>Descripcion del Producto</p>
-            <p>Precio: $XX.XX</p>
-            
-        </div>
+
         
-        <div class="total">Total: $XX.XX</div>
+        <div class="total">Total: <%= precioTotal %></div>
         
         <button>Proceder al Pago</button>
     </div>
