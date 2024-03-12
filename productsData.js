@@ -8,7 +8,7 @@ async function getProducts() {
     return rows
 }
 
-async function getProduct(id_producto) {
+async function  getProduct(id_producto) {
     const [result] = await pool.query(`
         select * 
         from productos

@@ -24,7 +24,7 @@
                 margin-bottom: 20px;
             }
     
-            form {
+            .form {
                 background-color: #fff;
                 padding: 20px;
                 border-radius: 5px;
@@ -74,20 +74,19 @@
         </style>
 
     </head>
-
-
-
     <body>
         <header>
             <h1>Bienvenido!</h1>
         </header>
-        <div><%= locals.failMessage || '' %></div>
-        <form id="loginForm" action="/login" method="POST">
+        <div class="form"><%= locals.failMessage || '' %></div>
+        <form class="form" id="loginForm" action="/login" method="POST">
             <input type="text" id="username" name="username" placeholder="Ingresa tu usuario">
             <input type="password" id="password" name="password" placeholder="Ingresa tu contraseña">
             <button type="submit">Login</button>
         </form>
+        <div class="form">
+            <button id="crearUsuario" onclick="crearUsuarioClick()">Crear usuario</button>
+        </div>
 
-        <button id="crearUsuario" onclick="crearUsuarioClick()">Crear usuario</button>
     </body>
 </html>

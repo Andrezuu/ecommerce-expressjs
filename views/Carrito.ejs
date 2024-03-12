@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrito de Compras</title>
-
+    <title>Express Ecommerce</title>
+    <script src="..\user.js"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -124,6 +124,25 @@
             font-weight: bold;
             margin-top: 20px;
         }
+
+        button {
+            background-color: #f0c14b;
+            border: none;
+            color: #111;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #d2ac4b;
+        }
+
 /* Responsive */
         @media only screen and (max-width: 600px) {
             header nav ul li {
@@ -145,7 +164,29 @@
             <ul>
                 <li><a href="/home" id="inicio">Inicio</a></li>
                 <li>
-                    <input type="text" class="search-box" placeholder="Buscar">
+                    <form id="searchForm" method="post">
+                        <input id="searchInput" type="text" class="search-box" placeholder="Buscar" list="productos">
+                        <datalist id="productos">
+                            <option value="Laptop HP Gaming" data-number="1">
+                            <option value="Auto" data-number="2">
+                            <option value="Tablet Apple" data-number="3">
+                            <option value="Camara Canon" data-number="4">
+                            <option value="Consola de videojuegos" data-number="5">
+                            <option value="Ropa" data-number="6">
+                            <option value="Funda laptop" data-number="7">
+                            <option value="Cartera" data-number="8">
+                            <option value="Cuadernos" data-number="9">
+                            <option value="Toma todo" data-number="10">
+                            <option value="Celular" data-number="11">
+                            <option value="Tenis" data-number="12">
+                            <option value="Televisor" data-number="13">
+                            <option value="Audiculares" data-number="14">
+                            <option value="Labiales" data-number="15">
+                            <option value="Videojuego" data-number="16">
+                            <option value="Sofa" data-number="17">
+                        </datalist>
+                        <button id="searchButton" type="submit">Buscar</button>
+                    </form>
                 </li>
                 <li><a href="/home/perfil" id="perfil">Perfil</a></li>
                 <li><a href="" id="carrito">Carrito</a></li>
@@ -155,23 +196,24 @@
 <article>
     <div class="container">
         <h1>Tu Carrito </h1>
-        
         <div class="cart-item">
+            <h3><%= carritoVacio || '' %></h3>
             <% for (let i = 0; i < productosSelected.length; i++) {  %>
                 <h3><%= productosSelected[i].producto_nombre %></h3>
                 <img src=<%= productosSelected[i].imagen_ruta %> alt="Producto 1">
                 <p><%= productosSelected[i].descripcion %></p>
-                <p><%= productosSelected[i].precio %></p>
-                <form method="post">
-                    <input type="hidden">
+                <p>$<%= productosSelected[i].precio %></p>
+                <form action="/home/carrito" method="post" >
+                    <input type="hidden" name="id_producto" value=<%= productosSelected[i].id_producto %>>
+                    <input type="hidden" name="action" value="quitarCarrito">
+                    <button type="submit">Eliminar</button>
                 </form>
             <% } %>
         </div>
-
-        
-        <div class="total">Total: <%= precioTotal %></div>
-        
-        <button>Proceder al Pago</button>
+        <div class="total">Total: $<%= precioTotal %></div>
+        <form action="/pago" method="get">
+            <button type="submit">Proceder al Pago</button>
+        </form>
     </div>
 </article>
 </body>

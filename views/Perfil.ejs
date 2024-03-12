@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>1ra Pagina</title>
+    <title>Express Ecommerce</title>
+    <script src="..\user.js"></script>
 
     <style>
         body {
@@ -97,6 +98,20 @@
             margin: 0; 
         }
 
+        button {
+            background-color: #f0c14b; /* Color de fondo del botón */
+            border: none;
+            color: #111; 
+            padding: 10px 20px;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s; /* Transición suave del color de fondo */
+        }
+
+        button:hover {
+            background-color: #ddb347; /* Cambia el color de fondo al pasar el ratón por encima */
+        }
+
         /* Responsive */
         @media only screen and (max-width: 600px) {
             header nav ul li {
@@ -120,9 +135,31 @@
             <ul>
                 <li><a href="/home">Inicio</a></li>
                 <li>
-                    <input type="text" class="search-box" placeholder="Buscar">
+                    <form id="searchForm" method="post">
+                        <input id="searchInput" type="text" class="search-box" placeholder="Buscar" list="productos">
+                        <datalist id="productos">
+                            <option value="Laptop HP Gaming" data-number="1">
+                            <option value="Auto" data-number="2">
+                            <option value="Tablet Apple" data-number="3">
+                            <option value="Camara Canon" data-number="4">
+                            <option value="Consola de videojuegos" data-number="5">
+                            <option value="Ropa" data-number="6">
+                            <option value="Funda laptop" data-number="7">
+                            <option value="Cartera" data-number="8">
+                            <option value="Cuadernos" data-number="9">
+                            <option value="Toma todo" data-number="10">
+                            <option value="Celular" data-number="11">
+                            <option value="Tenis" data-number="12">
+                            <option value="Televisor" data-number="13">
+                            <option value="Audiculares" data-number="14">
+                            <option value="Labiales" data-number="15">
+                            <option value="Videojuego" data-number="16">
+                            <option value="Sofa" data-number="17">
+                        </datalist>
+                        <button id="searchButton" type="submit">Buscar</button>
+                    </form>
                 </li>
-                <li><a href="#">Perfil</a></li>
+                <li><a href="">Perfil</a></li>
                 <li><a href="/home/carrito">Carrito</a></li>
             </ul>
         </nav>
@@ -131,15 +168,14 @@
     <div class="datosPerfil">
         <article>
             <h1>Bienvenido</h1>
-            <img src="imagenes/fotoPrueba.png" alt="">
+            <img src="imagenes/perfil.png" alt="persona" width="200" height="200">
         </article>
         <aside>
-            <b>Nombres:</b><p>Nombre del Usuario</p>
-            <b>Apellidos:</b><p>Apellido del Usuario</p>
-            <b>Email:</b><p>email del Usuario</p>
-            <b>País:</b><p>Pais del Usuario</p>
-            <b>Método de pago:</b><p>Método de Pago del Usuario</p>
-            <b>Compras realizadas:</b><p>Comparas del Usuario</p>
+            <b>Nombres:</b><p><%= user.nombres %></p>
+            <b>Apellidos:</b><p><%= user.apellidos %></p>
+            <b>Email:</b><p><%= user.email %></p>
+            <b>País:</b><p><%= user.pais %></p>
+            <b>Método de pago:</b><p><%= user.metodo_pago %></p>
         </aside>
     </div>
 </body>
