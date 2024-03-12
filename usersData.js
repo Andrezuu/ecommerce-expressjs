@@ -78,7 +78,6 @@ async function resetCarrito(id_user) {
         set productos_carrito = '[]'
         where id_user = ?
     `, id_user)
-    //
 }
 
 module.exports = {

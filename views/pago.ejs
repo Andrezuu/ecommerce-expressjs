@@ -221,7 +221,7 @@ button:hover {
                 <p>$<%= precioTotal  %></p>
             </div>
         </div>
-        <form id="pagoForm" class="payment-form" method="post" action="/home">
+        <form id="pagoForm" class="payment-form">
             <h2>Información de Pago</h2>
             <input type="text" placeholder="Nombre en la Tarjeta" required>
             <input type="text" placeholder="Número de Tarjeta" required>
@@ -234,6 +234,9 @@ button:hover {
     <div id="confirmacion" style="display: none">
         <h2>Pago Exitoso</h2>
         <p>¡Gracias por tu compra! Tu pago se ha procesado con éxito.</p>
+        <form id="postGenerator" method="post" action="/home">
+            <button id="volverButton" type="">Volver al inicio</button>
+        </form>
     </div>
 </article>
 </body>
