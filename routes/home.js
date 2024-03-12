@@ -47,13 +47,11 @@ router.post("/", async (req, res) => {
         delete producto.id_producto
         return id_producto
     })
-    console.log('estoy aqui?')
     res.render('PaginaPrincipal', { productos_nombres, productos_imagenes, productos_id, productos })
 })
 
 router.get("/perfil", async (req, res) => {
     const user = await getUser(1)
-    console.log(user)
     res.render('Perfil', { user })
 })
 
